@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('manus', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('store_id')->unsigned();
-            $table->string('name',30);
+            $table->string('title',100);
+            $table->string('name',100);
             $table->string('overview',200);
+            $table->integer('cost');
             $table->string('image_path',150);
         });
     }

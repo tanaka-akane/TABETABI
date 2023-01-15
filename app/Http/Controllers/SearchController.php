@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Prefecture;
 use App\Models\City;
+use App\Models\LocalFood;
 
 class SearchController extends Controller
 {
@@ -13,10 +14,18 @@ class SearchController extends Controller
         return view('search/prefecture')->with(['prefectures' => $prefecture->get()]);
     }
     
-    public function prefectureSelect(Request $request)
+    public function city(Prefecture $prefecture)
     {
-        $prefecture_id = $request['prefecture'];
-        $city = Prefecture::find($prefecture_id)->cities;
-        return view('search/city')->with(['cities' => $city]);
+        return view('search/city')->with([
+            'prefecture' => $prefecture,
+            ]);
     }
+    
+    public function localFood(City $city) 
+    {
+        return view('search/local_food')->with([
+            'city' => $city,
+            ]);
+    }
+    
 }

@@ -37,11 +37,6 @@ class CitySeeder extends Seeder
         ]);
         
         DB::table('cities')->insert([
-            'name' => '西宮・宝塚',
-            'prefecture_id' => 28,
-        ]);
-        
-        DB::table('cities')->insert([
             'name' => '明石・東播磨',
             'prefecture_id' => 28,
         ]);
@@ -51,5 +46,29 @@ class CitySeeder extends Seeder
             'prefecture_id' => 28,
         ]);
         
+        DB::table('cities')->insert([
+            'name' => 'キタ(梅田周辺)',
+            'prefecture_id' => 27,
+        ]);
+        
+        DB::table('cities')->insert([
+            'name' => 'ミナミ(道頓堀周辺)',
+            'prefecture_id' => 27,
+        ]);
+        
+        DB::table('cities')->insert([
+            'name' => '中河内・北河内',
+            'prefecture_id' => 27,
+        ]);
+        
+        DB::table('cities')->insert([
+            'name' => '堺・泉州・南河内',
+            'prefecture_id' => 27,
+        ]);
+        
+        DB::table('cities')->insert([
+            'name' => '北摂',
+            'prefecture_id' => 27,
+        ]);
     }
 }
