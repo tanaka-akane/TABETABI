@@ -9,6 +9,7 @@ use App\Models\Store;
 class LocalFood extends Model
 {
     use HasFactory;
+    protected $table = 'local_foods';
     
     public function city(){
         return $this->belongsTo(City::class);

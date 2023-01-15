@@ -17,14 +17,17 @@
     </head>
     <body>
         <div class='serch'>
-            <select>
-                @foreach($cities as $city)
-                    <option>
-                        {{$city->name}}
-                    </option>
-                @endforeach
-            </select>    
+            <form name="sort_form">
+                <select name="sort" onchange="dropsort()">
+                    @foreach($prefecture->cities as $city)
+                        <option value="/prefectures/{{$city->id}}/local-food">
+                            {{$city->name}}
+                        </option>
+                    @endforeach
+                </select>
+            </form>
         </div>
+        <script src="{{ asset('js/sort.js') }}"></script>
     </body>
     
 </html>

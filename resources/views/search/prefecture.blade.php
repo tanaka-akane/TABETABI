@@ -17,19 +17,17 @@
     </head>
     <body>
         <div class='search'>
-            <form action='prefectures' method='post'>
-                @csrf
-                <select name='prefecture'>
+            <form name="sort_form">
+                <select name="sort" onchange="dropsort()">
+                    <option>都道府県を選択</option>
                     @foreach($prefectures as $prefecture)
-                        <option value='{{$prefecture->id}}'>
-                            {{$prefecture->name}}
-                        </option>
+                            <option value="/prefectures/{{$prefecture->id}}/cities">
+                               {{$prefecture->name}}
+                            </option>
                     @endforeach
                 </select>
-                <input type='submit' value='次へ'>
             </form>
         </div>
+        <script src="{{ asset('js/sort.js') }}"></script>
     </body>
-    
 </html>
-    
