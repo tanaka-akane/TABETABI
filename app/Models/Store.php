@@ -7,10 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Like;
 use App\Models\Review;
 use App\Models\Menu;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Store extends Model
 {
+    use SoftDeletes;
     use HasFactory;
+    protected $fillable=[
+        'local_food_id',
+        'city_id',
+        'name',
+        'overview',
+        'adress',
+        'parking',
+        'private_room',
+        'card',
+        'midnight',
+        'e_money',
+        'counter_seat',
+        'reserve',
+        'take_out',
+        'child',
+        'image_path',
+        'score_average',
+    ];
     
     public function city(){
         return $this->belongsTo(City::class);

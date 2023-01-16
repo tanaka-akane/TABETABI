@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,18 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+//検索
 Route::get('/prefectures/{prefecture}/cities', [SearchController::class, 'city'])->name('city');
 Route::get('/prefectures', [SearchController::class, 'prefecture'])->name('prefecture');
-Route::get('/prefectures/{city}/local-food', [SearchController::class, 'localFood'])->name('localFood');
-
+Route::get('/prefectures/{city}/local-foods', [SearchController::class, 'localFood'])->name('localFood');
+Route::get('/prefectures/{local_food}/stores', [SearchController::class, 'store'])->name('store');
+//店情報入力・編集・削除
+Route::get('/store/prefecture', [StoreController::class, 'prefecture']);
+Route::get('/store/prefecture/{prefecture}/city', [StoreController::class, 'city']);
+Route::get('/store/prefecture/city/{city}/local-food', [StoreController::class, 'localFood']);
+Route::get('/store/prefecture/city/local-food/{local_food}/create', [StoreController::class, 'create']);
+Route::post('/store/register', [StoreController::class, 'register']);
+Route::get('/store/{store}', [StoreController::class, 'show']);
+Route::get('/store/{store}/edit', [StoreController::class, 'edit']);
+Route::put('/store/{store}', [StoreController::class, 'update']);
+Route::delete('/store/{store}', [StoreController::class,'delete']);
