@@ -16,14 +16,10 @@
         </style>
     </head>
     <body>
-        <div class='serch'>
-                @foreach($city->local_foods as $local_food)
-                        <a href="/prefectures/{{$local_food->id}}/stores">
-                            {{$local_food->name}}
-                        </a>
-                @endforeach
-        </div>
+        @foreach($localFood->stores as $store)
+                <a href="/store/{{$store->id}}">{{$store->name}}</a>
+                {{$store->overview}}
+        @endforeach
     </body>
     
 </html>
-    

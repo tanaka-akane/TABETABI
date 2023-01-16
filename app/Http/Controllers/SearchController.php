@@ -28,4 +28,11 @@ class SearchController extends Controller
             ]);
     }
     
+    public function store(LocalFood $localFood) 
+    {
+        return view('search/store')->with([
+            'localFood' => $localFood,
+            ]);
+    }
+    
 }

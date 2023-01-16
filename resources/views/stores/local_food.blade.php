@@ -14,21 +14,17 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        
+        <script src="{{ asset('store.js/store.js') }}"></script>
     </head>
     <body>
         <div class='serch'>
-            <form name="sort_form">
-                <select name="sort" onchange="dropsort()">
-                    <option>観光エリアを選択</option>
-                    @foreach($prefecture->cities as $city)
-                        <option value="/prefectures/{{$city->id}}/local-foods">
-                            {{$city->name}}
-                        </option>
-                    @endforeach
-                </select>
-            </form>
+                @foreach($city->local_foods as $local_food)
+                        <a href="/store/prefecture/city/local-food/{{$local_food->id}}/create">
+                            {{$local_food->name}}
+                        </a>
+                @endforeach
         </div>
-        <script src="{{ asset('js/sort.js') }}"></script>
     </body>
     
 </html>

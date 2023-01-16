@@ -29,8 +29,10 @@ return new class extends Migration
             $table->boolean('reserve')->default(false);
             $table->boolean('take_out')->default(false);
             $table->boolean('child')->default(false);
-            $table->string('image_path',150);
-            $table->double('score_average')->unsigned();
+            $table->string('image_path',150)->nullable();
+            $table->double('score_average')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
