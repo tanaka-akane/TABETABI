@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('local_food_id')->unsigned();
             $table->bigInteger('city_id')->unsigned();
             $table->string('name',100);

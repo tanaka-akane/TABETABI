@@ -23,6 +23,10 @@
                         </a>
                 @endforeach
         </div>
+        
+        <div class="footer">
+            <a href="/prefectures/{{ $local_food->city->prefecture->id }}/cities">戻る</a>
+        </div>
     </body>
     
 </html>

@@ -17,6 +17,7 @@ class StoreSeeder extends Seeder
     public function run()
     {
         DB::table('stores')->insert([
+                'user_id' => 1,
                 'local_food_id' => 1,
                 'city_id' => 1,
                 'name' => 'モーリヤ 本店',
@@ -34,6 +35,7 @@ class StoreSeeder extends Seeder
          ]);
          
          DB::table('stores')->insert([
+                'user_id' => 1,
                 'local_food_id' => 1,
                 'city_id' => 1,
                 'name' => 'ステーキみその 神戸本店',
@@ -51,6 +53,7 @@ class StoreSeeder extends Seeder
          ]);
          
          DB::table('stores')->insert([
+                'user_id' => 1,
                 'local_food_id' => 1,
                 'city_id' => 1,
                 'name' => '神戸牛ステーキ彩ダイニング',

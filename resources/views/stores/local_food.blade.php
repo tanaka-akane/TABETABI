@@ -25,6 +25,10 @@
                         </a>
                 @endforeach
         </div>
+        
+        <div class="footer">
+            <a href="/store/prefecture/{{ $city->prefecture->id }}}/city">戻る</a>
+        </div>
     </body>
     
 </html>

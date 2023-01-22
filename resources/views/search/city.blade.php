@@ -29,6 +29,9 @@
             </form>
         </div>
         <script src="{{ asset('js/sort.js') }}"></script>
+        <div class="footer">
+            <a href="/prefectures">戻る</a>
+        </div>
     </body>
     
 </html>
