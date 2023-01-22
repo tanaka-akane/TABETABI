@@ -14,7 +14,7 @@ return [
     */
 
     'default' => env('FILESYSTEM_DISK', 'local'),
-
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -27,6 +27,8 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
+
+    
 
     'disks' => [
 

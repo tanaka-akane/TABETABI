@@ -15,16 +15,19 @@
             }
         </style>
         
+        <link rel="stylesheet" href="{{asset("/css/store/show.css")}}">
         <script src="{{ asset('store.js/store.js') }}"></script>
     
     </head>
     <body>
-        <div class="edit"><a href="/store/{{ $store->id }}/edit">お店情報を編集する</a></div>
-        <form action="/store/{{ $store->id }}" id="form_{{ $store->id }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="button" onclick="deletePost({{ $store->id }})">delete</button> 
-        </form>
+        @if (Auth::id() == $store->user_id)
+            <div class="edit"><a href="/store/{{ $store->id }}/edit">お店情報を編集する</a></div>
+            <form action="/store/{{ $store->id }}" id="form_{{ $store->id }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="button" onclick="deletePost({{ $store->id }})">delete</button> 
+            </form>
+        @endif
         <h1 class="store_name">
             {{ $store->name }}
         </h1>
@@ -33,13 +36,115 @@
                 <p>{{ $store->overview }}</p>    
         </div>
         <div class="feature">
-            <script>
+            @if($store->parking == 1)
+                <div class="parking active">
+                    駐車場あり
+                </div>
+            @else
+                <div class="parking inactive">
+                    駐車場あり
+                </div>
+            @endif
             
-            </script>
+            @if($store->private_room == 1)
+                <div class="private_room active">
+                    個室あり
+                </div>
+            @else
+                <div class="private_room inactive">
+                    個室あり
+                </div>
+            @endif
+            
+            @if($store->card == 1)
+                <div class="card active">
+                    カード可
+                </div>
+            @else
+                <div class="card inactive">
+                    カード可
+                </div>
+            @endif
+            
+            @if($store->midnight == 1)
+                <div class="midnight active">
+                    深夜営業
+                </div>
+            @else
+                <div class="midnight inactive">
+                    深夜営業
+                </div>
+            @endif
+            
+            @if($store->e_money == 1)
+                <div class="e_money active">
+                    電子マネー可
+                </div>
+            @else
+                <div class="e_money inactive">
+                    電子マネー可
+                </div>
+            @endif
+            
+            @if($store->counter_seat == 1)
+                <div class="counter_seat active">
+                    カウンター席
+                </div>
+            @else
+                <div class="counter_seat inactive">
+                    カウンター席
+                </div>
+            @endif
+            
+            @if($store->reserve == 1)
+                <div class="reserve active">
+                    予約可
+                </div>
+            @else
+                <div class="reserve inactive">
+                    予約可
+                </div>
+            @endif
+            
+            @if($store->take_out == 1)
+                <div class="take_out active">
+                    テイクアウト可
+                </div>
+            @else
+                <div class="take_out inactive">
+                    テイクアウト可
+                </div>
+            @endif
+            
+            @if($store->child == 1)
+                <div class="child active">
+                    お子様歓迎
+                </div>
+            @else
+                <div class="child inactive">
+                    お子様歓迎
+                </div>
+            @endif
         </div>
-        
+        <div class="menu">
+            <h2>これが食べたい！</h2>
+            <div class="manu_content">
+                @foreach ($store->menus as $menu)
+                    <h3>{{$menu->title}}</h3>
+                    <p>{{$menu->overview}}</p>
+                    <p>{{$menu->name}}</p>
+                    <p>￥{{$menu->cost}}</p>
+                    @if (Auth::id() == $store->user_id)
+                        <a href="/menu/{{ $menu->id }}/edit">編集する</a>
+                    @endif
+                @endforeach
+            </div>
+            @if (Auth::id() == $store->user_id)
+                <a href='/menu/create/{{$store->id}}'>メニューを新しく追加する</a>
+            @endif
+        </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/prefectures/{{ $store->local_food->id }}/stores">戻る</a>
         </div>
     </body>
 </html>

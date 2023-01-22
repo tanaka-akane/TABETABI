@@ -1,0 +1,23 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid;
+}
+
+.main-nav {
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 36px;
+    background-color: red;
+    padding: 10px 20px;
+}
+
+.wrapper {
+    max-width: 1100px;
+    maegin: 0 auto;
+    padding: 0 4%;
+}

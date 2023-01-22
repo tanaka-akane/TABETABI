@@ -29,53 +29,57 @@
             </div>
             <div class="overview">
                 <h2>紹介文</h2>
-                <textarea name="store[overview]" value"{{ $store->overview }}"></textarea>
+                <textarea name="store[overview]" value="{{ $store->overview }}">{{ $store->overview }}</textarea>
             </div>
             <div class="adress">
                 <h2>住所</h2>
-                <textarea name="store[adress]" value={{ $store->adress }}></textarea>
+                <textarea name="store[adress]" value="{{ $store->adress }}">{{ $store->adress }}</textarea>
             </div>
             <div class="parking">
                 <h2>駐車場の有無</h2>
-                <input type="checkbox" name="store[parking]" value=1 >
+                <input type="checkbox" name="store[parking]" value=1 ,{{ $store->parking == 1 ? 'checked' : '' }} >
             </div>
             <div class="private_room">
                 <h2>個室の有無</h2>
-                <input type="checkbox" name="store[private_room]" value=1   
+                <input type="checkbox" name="store[private_room]" value=1 {{ $store->private_room== 1 ? 'checked' : '' }} >
             </div>
             <div class="card">
                 <h2>カード支払いの可否</h2>
-                <input type="checkbox" name="store[card]" value=1 >
+                <input type="checkbox" name="store[card]" value=1 {{ $store->card == 1 ? 'checked' : '' }} >
             </div>
             <div class="midnight">
                 <h2>深夜営業(24時以降)の有無</h2>
-                <input type="checkbox" name="store[midnight]" value=1 >
+                <input type="checkbox" name="store[midnight]" value=1 {{ $store->midnight == 1 ? 'checked' : '' }} >
             </div>
             <div class="e_money">
                 <h2>電子マネー支払いの可否</h2>
-                <input type="checkbox" name="store[e_money]" value=1 >
+                <input type="checkbox" name="store[e_money]" value=1 {{ $store->e_money == 1 ? 'checked' : '' }} >
             </div>
             <div class="counter_seat">
                 <h2>カウンター席の有無</h2>
-                <input type="checkbox" name="store[counter_seat]" value=1 >
+                <input type="checkbox" name="store[counter_seat]" value=1 {{ $store->counter_seat == 1 ? 'checked' : '' }} >
             </div>
             <div class="reserve">
                 <h2>予約の可否</h2>
-                <input type="checkbox" name="store[reserve]" value=1 >
+                <input type="checkbox" name="store[reserve]" value=1 {{ $store->reserve == 1 ? 'checked' : '' }} >
             </div>
             <div class="take_out">
                 <h2>テイクアウトの有無</h2>
-                <input type="checkbox" name="store[take_out]" value=1 >
+                <input type="checkbox" name="store[take_out]" value=1 {{ $store->take_out == 1 ? 'checked' : '' }} >
             </div>
             <div class="child">
                 <h2>小さなお子様への配慮</h2>
-                <input type="checkbox" name="store[child]" value=1 >
+                <input type="checkbox" name="store[child]" value=1 {{ $store->child == 1 ? 'checked' : '' }} >
             </div>
             <div class="image">
                 画像投稿機能
             </div>
             <input type="submit" value="編集を保存"/>
         </form>
+    </div>
+    
+    <div class="footer">
+        <a href="/store/{{ $store->id }}">戻る</a>
     </div>
     </body>
 </html>

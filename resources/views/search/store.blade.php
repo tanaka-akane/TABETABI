@@ -17,9 +17,14 @@
     </head>
     <body>
         @foreach($localFood->stores as $store)
+                <img src="{{ $store->image }}">
                 <a href="/store/{{$store->id}}">{{$store->name}}</a>
                 {{$store->overview}}
         @endforeach
+        
+        <div class="footer">
+            <a href="/prefectures/{{$store->city->id}}/local-foods">戻る</a>
+        </div>
     </body>
     
 </html>

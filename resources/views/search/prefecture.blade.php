@@ -14,11 +14,24 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        
+        <link rel="stylesheet" href="{{asset("/css/search/prefecture.css")}}">
+        
     </head>
-    <header>
-        <a href='/store/prefecture'>create</a>
+    <header class="page-header wrapper">
+        <div class="logo">
+            <h1>TABETABI</h1>
+        </div>
+        <nav>
+            <ul class="main-nav">
+                <li>LOGIN</li>
+                <li>REGISTER</li>
+                <li>MYPAGE</li>
+            </ul>
+        </nav>
     </header>
     <body>
+        <a href='/store/prefecture'>create</a>
         <div class='search'>
             <form name="sort_form">
                 <select name="sort" onchange="dropsort()">
@@ -32,5 +45,8 @@
             </form>
         </div>
         <script src="{{ asset('js/sort.js') }}"></script>
+        <div class="footer">
+            <a href="/">戻る</a>
+        </div>
     </body>
 </html>

@@ -19,6 +19,7 @@
         <h1>お店情報入力</h1>
         <form action="/store/register" method="POST">
             @csrf
+            <input type="hidden" name="store[user_id]" value={{$user_id}}>
             <input type="hidden" name="store[city_id]" value="{{$localFood->city_id}}">
             <input type="hidden" name="store[local_food_id]" value="{{$localFood->id}}">
             <div class="name">
@@ -70,12 +71,12 @@
                 <input type="checkbox" name="store[child]" value="1">
             </div>
             <div class="image">
-                画像投稿機能
+                <input type='file' name="image">
             </div>
             <input type="submit" value="保存"/>
         </form>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/store/prefecture/city/{{$localFood->city->id}}/local-food">戻る</a>
         </div>
         
         

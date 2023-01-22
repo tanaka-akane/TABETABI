@@ -14,6 +14,7 @@ class Store extends Model
     use SoftDeletes;
     use HasFactory;
     protected $fillable=[
+        'user_id',
         'local_food_id',
         'city_id',
         'name',
@@ -31,6 +32,11 @@ class Store extends Model
         'image_path',
         'score_average',
     ];
+    
+    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     
     public function city(){
         return $this->belongsTo(City::class);

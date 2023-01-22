@@ -31,5 +31,9 @@
                 </select>
             </form>
         </div>
+    
+        <div class="footer">
+            <a href="/prefectures">戻る</a>
+        </div>
     </body>
 </html>

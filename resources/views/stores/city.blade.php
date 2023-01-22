@@ -30,6 +30,10 @@
                 </select>
             </form>
         </div>
+        
+        <div class="footer">
+            <a href="/store/prefecture">戻る</a>
+        </div>
     </body>
     
 </html>
