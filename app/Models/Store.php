@@ -58,4 +58,14 @@ class Store extends Model
         return $this->hasMany(Menu::class);
     }
     
+    /**
+     * @return void
+     */
+    public static function booted(): void
+    {
+        static::deleted(function ($store) {
+            $store->menus()->delete();
+        });
+    }
+    
 }
