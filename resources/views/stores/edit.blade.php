@@ -18,7 +18,7 @@
     <body>
         <h1 class="title">お店情報の編集</h1>
         <div class="content">
-        <form action="/store/{{ $store->id }}" method="POST">
+        <form action="/store/{{ $store->id }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <input type="hidden" name="store[city_id]" value="{{ $store->city_id }}">
@@ -72,7 +72,12 @@
                 <input type="checkbox" name="store[child]" value=1 {{ $store->child == 1 ? 'checked' : '' }} >
             </div>
             <div class="image">
-                画像投稿機能
+                <div>
+                    <h3>現在設定されている画像</h3>
+                    <img src="{{ $store->image_path }}" alt="画像が設定されていません。"/>
+                </div>
+                <h2>画像を変更する</h2>
+                <input type="file" name="image">
             </div>
             <input type="submit" value="編集を保存"/>
         </form>

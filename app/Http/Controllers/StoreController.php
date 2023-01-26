@@ -10,6 +10,7 @@ use App\Models\Store;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Cloudinary;
 
 class StoreController extends Controller
 {
@@ -44,19 +45,9 @@ class StoreController extends Controller
     public function register(Request $request, Store $store) 
     {   
         $input = $request['store'];
-        $input_image = $request['image'];
-        if($input_image)
-        {
-            $path = Storage::disk('s3')->putFile('store_photos', $input_image, 'public');
-            $input['image_path'] = Storage::disk('s3')->url($path);
-        }
-        dd($path);
-        // バケットの`example`フォルダへアップロードする
-        $path = Storage::disk('s3')->putFile('store_photos', $image, 'public');
-        // アップロードした画像のフルパスを取得
-        $store->image = Storage::disk('s3')->url($path);
-        dd($path);
-        
+        $image_path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_path' => $image_path];
+        $store->fill($input)->save();
         return redirect('/store/' . $store->id);
     }
     
@@ -73,8 +64,11 @@ class StoreController extends Controller
     public function update(Request $request, Store $store)
     {
         $input_store = $request['store'];
+        if($request->file('image')){
+            $image_path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input_store += ['image_path' => $image_path];
+        }
         $store->fill($input_store)->save();
-    
         return redirect('/store/' . $store->id);
     }
     

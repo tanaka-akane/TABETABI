@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Store;
 use App\Models\Menu;
+use Cloudinary;
 
 class MenuController extends Controller
 {
@@ -18,6 +19,8 @@ class MenuController extends Controller
     public function register(Request $request, Menu $menu) 
     {   
         $input = $request['menu'];
+        $image_path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_path' => $image_path];
         $menu->fill($input)->save();
         return redirect('/store/' . $menu->store_id);
     }
@@ -29,8 +32,12 @@ class MenuController extends Controller
     
     public function update(Request $request, Menu $menu)
     {
-        $input_menu = $request['menu'];
-        $menu->fill($input_menu)->save();
+        $inputs = $request['menu'];
+        if($request->file('image')){
+            $image_path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input += ['image_path' => $image_path];
+        }
+        $menu->fill($input)->save();
         return redirect('/store/' . $menu->store_id);
     }
     
