@@ -31,6 +31,9 @@
         <h1 class="store_name">
             {{ $store->name }}
         </h1>
+        <div>
+            <img src="{{ $store->image_path }}" alt="画像が読み込めません。"/>
+        </div>
         <div class="store_overview">
                 <h3>お店の紹介</h3>
                 <p>{{ $store->overview }}</p>    
@@ -131,6 +134,9 @@
             <div class="manu_content">
                 @foreach ($store->menus as $menu)
                     <h3>{{$menu->title}}</h3>
+                    <div>
+                        <img src="{{ $menu->image_path }}" alt="画像が読み込めません。"/>
+                    </div>
                     <p>{{$menu->overview}}</p>
                     <p>{{$menu->name}}</p>
                     <p>￥{{$menu->cost}}</p>
@@ -142,6 +148,10 @@
             @if (Auth::id() == $store->user_id)
                 <a href='/menu/create/{{$store->id}}'>メニューを新しく追加する</a>
             @endif
+        </div>
+        <div class="adress">
+            <h3>住所</h3>
+            <p>{{$store->adress}}</p>
         </div>
         <div class="footer">
             <a href="/prefectures/{{ $store->local_food->id }}/stores">戻る</a>

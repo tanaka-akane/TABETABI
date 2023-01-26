@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>メニューの登録</h1>
-        <form action="/menu/register" method="POST">
+        <form action="/menu/register" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="menu[store_id]" value={{$store->id}}>
             <div class="title">
@@ -37,7 +37,7 @@
                 <input type="number" name="menu[cost]" placeholder="価格">
             </div>
             <div class="image">
-                <input type='file' name="image">
+                <input type="file" name="image">
             </div>
             <input type="submit" value="保存"/>
         </form>

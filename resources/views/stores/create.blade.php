@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>お店情報入力</h1>
-        <form action="/store/register" method="POST">
+        <form action="/store/register" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="store[user_id]" value={{$user_id}}>
             <input type="hidden" name="store[city_id]" value="{{$localFood->city_id}}">
@@ -71,7 +71,7 @@
                 <input type="checkbox" name="store[child]" value="1">
             </div>
             <div class="image">
-                <input type='file' name="image">
+                <input type="file" name="image">
             </div>
             <input type="submit" value="保存"/>
         </form>

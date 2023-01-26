@@ -24,7 +24,7 @@
             @method('DELETE')
             <button type="button" onclick="deletePost({{ $menu->id }})">delete</button> 
         </form>
-        <form action="/menu/{{ $menu->id }}" method="POST">
+        <form action="/menu/{{ $menu->id }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <input type="hidden" name="menu[store_id]" value={{ $menu->store_id }}>
@@ -45,7 +45,12 @@
                 <input type="number" name="menu[cost]" value="{{ $menu->cost }}">
             </div>
             <div class="image">
-                画像投稿機能
+                <div>
+                    <h3>現在設定されている画像</h3>
+                    <img src="{{ $menu->image_path }}" alt="画像が設定されていません。"/>
+                </div>
+                <h2>画像を変更する</h2>
+                <input type="file" name="image">
             </div>
             <input type="submit" value="保存"/>
         </form>

@@ -15,6 +15,7 @@
             }
         </style>
         
+        <script src="{{ asset('js/sort.js') }}"></script>
         <link rel="stylesheet" href="{{asset("/css/search/prefecture.css")}}">
         
     </head>
@@ -32,7 +33,7 @@
     </header>
     <body>
         <a href='/store/prefecture'>create</a>
-        <div class='search'>
+        <div class='selectwrap'>
             <form name="sort_form">
                 <select name="sort" onchange="dropsort()">
                     <option>都道府県を選択</option>
@@ -44,7 +45,6 @@
                 </select>
             </form>
         </div>
-        <script src="{{ asset('js/sort.js') }}"></script>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
