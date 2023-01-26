@@ -23,7 +23,7 @@
         @endforeach
         
         <div class="footer">
-            <a href="/prefectures/{{$store->city->id}}/local-foods">戻る</a>
+            <a href="/prefectures/{{$localFood->city->id}}/local-foods">戻る</a>
         </div>
     </body>
     
