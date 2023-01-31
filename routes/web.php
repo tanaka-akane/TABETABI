@@ -18,12 +18,9 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('top.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/prefectures/{city}/local-foods', [SearchController::class, 'localFood'])->name('localFood');
     Route::get('/prefectures/{local_food}/stores', [SearchController::class, 'store'])->name('search.store');
     //店基本情報登録・編集・削除
-    Route::get('/store/prefecture', [StoreController::class, 'prefecture']);
+    Route::get('/store/prefecture', [StoreController::class, 'prefecture'])->name('start.store.create');
     Route::get('/store/prefecture/{prefecture}/city', [StoreController::class, 'city']);
     Route::get('/store/prefecture/city/{city}/local-food', [StoreController::class, 'localFood']);
     Route::get('/store/prefecture/city/local-food/{local_food}/create', [StoreController::class, 'create']);
