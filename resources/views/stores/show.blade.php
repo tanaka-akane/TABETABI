@@ -33,7 +33,7 @@
             {{ $store->name }}
         </h1>
         <div>
-            <img src="{{ $store->image_path }}" alt="画像が読み込めません。"/>
+            <img src="{{ $store->image_path }}" alt="not image"/>
         </div>
         <div class="store_overview">
                 <h3>お店の紹介</h3>

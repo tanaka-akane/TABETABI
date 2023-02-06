@@ -11,27 +11,35 @@ body {
 .mainwrap {
    text-align: center;
    padding-top: 150px;
-   animation-name:fadeUpAnime;
-   animation-duration:0.5s;
+   animation-name:fadeInAnime;
+   animation-duration:1s;
    animation-fill-mode:forwards;
    opacity:0;
 }
 
-@keyframes fadeUpAnime{
+@keyframes fadeInAnime{
   from {
     opacity: 0;
-  transform: translateY(100px);
   }
 
   to {
     opacity: 1;
-  transform: translateY(0);
   }
 }
 
 .feature {
     color: #545454;
-    
+}
+
+.citytitle {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #EFB41E;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 3px 15px;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    color: #545454
 }
 
 .selectwrap {
@@ -64,4 +72,20 @@ body {
     background-color: #fff;
     color: #555;
     cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #545454;
+}
+
+.footer a:hover {
+    color: #807F7F
 }

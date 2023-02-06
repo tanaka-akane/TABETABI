@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    background-color: #F5F5F5;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    margin: 0  50px;
+    padding: 10px 0;
+    border-bottom: 2px #807F7F solid;
+    justify-content: space-between;
+}
+
+.area-container {
+    display: flex;
+    display: flex;
+    align-items: center;
+}
+
+.tag-container {
+    display: flex;
+}
+
+.tag-p {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #D9D9D9;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 3px 15px;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    color: #545454;
+}
+
+.tag-c {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #D9D9D9;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 3px 15px;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    color: #545454;
+    margin-left: 10px;
+}
+
+.tag-l {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #EFB41E;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 3px 15px;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    color: #545454;
+    margin-left: 10px;
+}
+
+.title {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: #545454
+}
+
+.back-container {
+    text-align: center;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    margin-top: 50px;
+    padding-right: 30px
+}
+
+.back-container a {
+    text-decoration: none;
+    color: #545454;
+    text-align: right;
+}
+
+.back-container a:hover {
+    color: #807F7F
+}
+
+.local_foods_container {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 50%;
+}
+
+.stores_container {
+    margin: 30px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #545454;
+}
+
+.store_box {
+    height: fit-content;
+    background-color: #fcfcfc;
+    padding: 20px;
+}
+
+
+.image_conteiner {
+    text-align:center   
+}
+
+.store_box img{
+    text-align: center;
+    width: 434px;
+    height: 266px;
+}
+
+.title_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.store_name {
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+
+
+.go {
+    
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #EFB41E;
+    width: fit-content;
+    margin: 10px 0 10px auto;
+    padding: 6px 15px;
+    font-weight: bold;
+    color: #545454;
+    margin-left: 10px;
+    border: 2px solid #EFB41E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.go:hover {
+    background-color: transparent;
+    border: 2px solid #EFB41E;
+    color: #F4CC64;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.detail {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+.fadeUp {
+animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+

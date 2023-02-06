@@ -18,8 +18,9 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('top.index');
-});
+    return view('/top/index');
+})->name('top');
+
 
 
 Route::middleware('auth')->group(function () {
