@@ -1,0 +1,23 @@
+.body{
+    background-color: #F5F5F5;
+}
+
+.container{
+    background-color: #F5F5F5;
+}
+
+.logo {
+    margin: 0;
+    display: inline-block;
+}
+
+.subtitle {
+    font-family: sans-serif;
+    font-weight: bolder;
+    coler: #1F2937;
+    margin-top: 20px;
+}
+
+.blank {
+    height: 80px;
+}

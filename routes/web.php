@@ -18,8 +18,9 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
-});
+    return view('/top/index');
+})->name('top');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
