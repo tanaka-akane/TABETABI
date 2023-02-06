@@ -1,6 +1,6 @@
 @section('header')
 <link rel="stylesheet" href="{{asset("/css/nav/header.css")}}">
-<header class="site-header">
+<header id="header" class="site-header">
   <div class="wrapper site-header__wrapper">
     <a href="/prefectures" class="brand">
         <div class="title_logo">
