@@ -32,7 +32,7 @@ class MenuController extends Controller
     
     public function update(Request $request, Menu $menu)
     {
-        $inputs = $request['menu'];
+        $input = $request['menu'];
         if($request->file('image')){
             $image_path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
             $input += ['image_path' => $image_path];

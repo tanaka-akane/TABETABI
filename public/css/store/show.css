@@ -11,6 +11,7 @@ body {
 .back a {
     ont-family: "游ゴシック";
     color: #545454;
+    font-weight: bold
 }
 
 .back a:hover {
