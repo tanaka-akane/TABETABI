@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    background-color: #F5F5F5;
+}
+
+.mainwrap {
+   width: 50%;
+   margin: 0 auto;
+   text-align: center
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #545454;
+    align-items: center;
+}
+
+.title p{
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.title a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #545454;
+}
+
+.title a:hover {
+    color: #807F7F
+}
+
+
+/*ステップ表示ここから*/
+.step {
+	font-size: 80%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0 0 1em;
+	padding: 0;
+}
+.step > li {
+	position: relative;
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	text-overflow: ellipsis;
+	color: #b0bec5;
+	 -ms-flex: 1;
+	-moz-flex: 1;
+	-webkit-box-flex: 1;
+	     flex: 1;
+}
+.step > li .bubble::after,
+.step > li .bubble::before {
+	position: absolute;
+	top: 0px;
+	right: 50%;
+	left: 50%;
+	display: block;
+	width: 90%;
+	height: 8px;
+	content: '';
+	transform: translateX(-50%);
+	background-color: #b0bec5;
+}
+.step > li .bubble + span {
+	display: block;
+	margin-top: 1em;
+}
+.step > li.completed,
+.step > li.completed .bubble {
+	color: #b0bec5;
+}
+.step > li.completed .bubble,
+.step > li.completed .bubble::after,
+.step > li.completed .bubble::before {
+	background-color: #EFB41E;
+}
+.step > li.active,
+.step > li.active .bubble {
+	font-weight: bold;
+	color: #EFB41E;
+}
+.step > li.active .bubble,
+.step > li.active .bubble::after,
+.step > li.active .bubble::before {
+	background-color: #EFB41E;
+}
+/*ここまで*/
+
+.message {
+    margin-top: 70px;
+    color: #545454;
+    
+}
+
+.citytitle {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #EFB41E;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 3px 15px;
+    font-family: "游ゴシック";
+    font-weight: bold;
+    color: #545454
+}
+
+.selectwrap {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.selectwrap::after {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    width: 10px;
+    height: 7px;
+    background-color: #EFB41E;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.selectwrap select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 200px;
+    height: 40px;
+    padding: 5px 50px 5px 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+}
+
